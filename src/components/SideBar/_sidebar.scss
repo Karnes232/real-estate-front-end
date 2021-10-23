@@ -1,0 +1,18 @@
+.dashboard__side-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar {
+
+    &__user {
+        height: 40vh;
+        display: flex;
+        align-items: center;
+    }
+
+    &__sections {
+
+    }
+}

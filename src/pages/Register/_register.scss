@@ -1,0 +1,38 @@
+.register {
+    height: 100vh;
+    display: flex;
+
+    &__container {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__login {
+        width: 25vw;
+        height: 70vh;
+        border: 1px solid $color-grey-light-2;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+        h3 {
+            font-size: 2rem;
+            color: $color-black;
+        }
+    }
+
+    &__image {
+        background-image: linear-gradient(
+            to right bottom, 
+            rgba($color-black, 0.4), 
+            rgba($color-black, 0.7)), 
+            url('../../images/registerImage.webp');
+        width: 60%;
+        background-size: cover;
+        background-position: 10%, 50%;
+    }
+}

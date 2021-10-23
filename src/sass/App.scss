@@ -1,0 +1,28 @@
+@import './base/mixins';
+@import './base/variables';
+@import './base/typography';
+@import './base/base';
+@import './base/animations';
+@import './base/utilities';
+
+@import './layout/layout';
+@import './layout/flex';
+
+@import '../components/HomePage/header';
+@import '../components/HomePage/featured';
+@import '../components/SideBar/sidebar';
+@import '../components/Navbar/navbar';
+@import '../components/AddListing/addlisting';
+@import '../components/addListingMap/AddListingMap';
+@import '../components/CheckBoxes/checkboxes';
+@import '../components/houseLocationMap/HouseLocationMap';
+
+@import './components/button';
+@import './components/form';
+
+@import '../pages/Register/register';
+@import '../pages/Dashboard/dashboard';
+@import '../pages/SingleHouse/singleHouse';
+
+
+@import "~react-image-gallery/styles/scss/image-gallery.scss";

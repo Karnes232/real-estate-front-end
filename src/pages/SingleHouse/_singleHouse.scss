@@ -1,0 +1,72 @@
+.single-house {
+    margin: 7rem auto;
+    max-width: 90rem;
+    min-height: 80vh;
+
+    background-color: $color-grey-light-1;
+
+    &__main-info {
+        display: flex;
+        justify-content: space-between;   
+        align-items: center; 
+        margin: 0 15rem;
+    }
+    &__title {
+
+    }
+    &__price {
+
+    }
+    &__address {
+
+    }
+
+    &__secondary-info {
+        display: flex;
+        align-items: center; 
+        margin-left: 15rem;
+        justify-content: flex-start;
+        img {
+            width: 1.1rem;
+            margin-right: .5rem;
+        }
+    }
+
+    &__gallery {
+        width: 40rem;
+    }
+
+    &__description {
+        padding: 1.5rem 2rem;
+        min-height: 15vh;
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.6);
+        span {
+            border-bottom: 1px solid $color-grey-dark-3;
+            width: 5rem;
+            margin: -.1rem 0 1rem 1rem;
+            display: block;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    &__details {
+        margin-top: 4rem;
+        padding: 1.5rem 2rem;
+        min-height: 15vh;
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.6);
+
+        p {
+            font-size: .8rem;
+        }
+    }
+    
+}
+
+.image-gallery-svg {
+    height: 26px !important;
+    width: 18px !important;
+}

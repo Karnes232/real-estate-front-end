@@ -1,0 +1,24 @@
+.dashboard {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+
+    &__side-menu {
+        width: 15vw;
+        background-color: $color-grey-dark-3;
+        position: fixed;
+        height: 100vh;
+    }
+
+    &__section {
+        background-image: url('../../images/dashboard-bg.webp');
+        background-size: contain;
+        background-position: 10%, 50%;
+        position: relative;
+        background-attachment: fixed;
+        width: 100%;
+        opacity: .5;
+        margin-left: 15vw;
+        padding-top: 8rem;
+    }
+}

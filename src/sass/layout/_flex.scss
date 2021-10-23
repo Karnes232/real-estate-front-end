@@ -1,0 +1,51 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    max-width: $grid-width;
+    margin: 0 auto;
+    
+    @include respond(tab-port) {
+        flex-direction: column;
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+
+
+
+.col-1-of-2 {
+    flex: 0 0 calc((100% - #{$gutter-horizontal}) / 2);
+    // &:not(:last-child) {
+    //     margin-right: $gutter-horizontal;
+    // }
+
+    @include respond(tab-port) {
+        width: 100% !important;
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+    }
+}
+
+.col-1-of-3 {
+    flex: 0 0 calc((100% - #{$gutter-horizontal}*2) / 3);
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
+    @include respond(tab-port) {
+        width: 100% !important;
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+    }
+}
+
+.col-1-of-4 {
+    flex: 0 0 calc((100% - #{$gutter-horizontal}*3) / 4);
+    &:not(:last-child) {
+        margin-right: $gutter-horizontal;
+    }
+    @include respond(tab-port) {
+        width: 100% !important;
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+    }
+}
+}
