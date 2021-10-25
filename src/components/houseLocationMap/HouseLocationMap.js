@@ -19,8 +19,8 @@ const HouseLocationMap = ({ lat, lng }) => {
         googleMapsApiKey: "AIzaSyATyzDwEKWLDx_bJ3M-ahptAfrUpTqApWs"
       })
     
-    const [map, setMap] = React.useState(null)
-
+    const [map, setMap] = useState(null)
+    console.log(map)
     const onLoad = React.useCallback(function callback(map) {
         const bounds = new window.google.maps.LatLngBounds();
         map.fitBounds(bounds);

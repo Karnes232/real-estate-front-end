@@ -2,7 +2,8 @@ import React from 'react'
 import Header from '../components/HomePage/Header';
 import Featured from '../components/HomePage/Featured'
 
-const Home = () => {
+const Home = (props) => {
+    console.log(props)
     return (
         <div>
             <Header/>

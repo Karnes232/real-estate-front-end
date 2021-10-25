@@ -7,7 +7,6 @@ const Featured = () => {
     useEffect(() => {
         FetchNewestHomes(setNewestHomes)
     }, [])
-    console.log(newestHomes)
     return (
         <div className='featured-homes u-margin-bottom-extra-big'>
             <div className="featured-homes__title u-margin-bottom-medium">

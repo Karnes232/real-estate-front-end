@@ -7,7 +7,6 @@ const FetchNewestHomes = async (setNewestHomes) => {
     }
 
     let res = await axios(config)
-    console.log(res.data)
     setNewestHomes(res.data)
     return res.data
 }

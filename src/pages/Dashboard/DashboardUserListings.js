@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import { useHistory } from "react-router-dom";
-import AddListing from '../../components/AddListing/AddListing';
+import { useHistory } from 'react-router-dom'
+
 import SideBar from '../../components/SideBar/SideBar';
+import UserListings from '../../components/UserListings/UserListings';
 import CurrentUserContext from '../../context/current-user.context';
 
-const Dashboard = () => {
+const DashboardUserListings = () => {
     const user = useContext(CurrentUserContext)
     const history = useHistory();
     if(!user._id) {
@@ -13,11 +14,10 @@ const Dashboard = () => {
     
     return (
         <main className='dashboard'>
-            <SideBar/>            
-            <AddListing/>
-            
+            <SideBar/>
+            <UserListings/> 
         </main>
     )
 }
 
-export default Dashboard
+export default DashboardUserListings

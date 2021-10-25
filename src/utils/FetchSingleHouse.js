@@ -21,6 +21,7 @@ const FetchSingleHouse = async (id, setHouse, setImages) => {
           thumbnail: image.image,
       }
       images.push(imageUrl)
+      return true
     });
     
     setImages(images)

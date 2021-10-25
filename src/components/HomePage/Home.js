@@ -42,7 +42,7 @@ const Home = ({homeInfo}) => {
                             <h6>{homeInfo.bedrooms} Bathrooms</h6>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row u-margin-bottom-small">
                         <div className="featured-home__details-flex">
                             <img className='sq-foot-icon' src={surfaceIcon} alt="" />
                             <h6 className='sq-foot-info'>{new Intl.NumberFormat().format(homeInfo.sqFoot)} sq ft</h6>

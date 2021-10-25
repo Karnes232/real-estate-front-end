@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import axios from 'axios';
-
 import AddListingMap from '../addListingMap/AddListingMap'
 import CheckBoxes from '../CheckBoxes/CheckBoxes'
 import FormInput from '../FormInput/FormInput'
@@ -71,8 +69,8 @@ const AddListing = () => {
         const submittedHouse = await SubmitListing(token, data)
         const photoInfo = { selectedFile, submittedHouse }
         const multiPhotoInfo = { photoList, submittedHouse }
-        const fileUpload = await SubmitSinglePhoto(token, photoInfo)
-        const multiFileUpload = await SubmitMultiPhotos(token, multiPhotoInfo)
+        await SubmitSinglePhoto(token, photoInfo)
+        await SubmitMultiPhotos(token, multiPhotoInfo)
 
         history.push("/");
     }

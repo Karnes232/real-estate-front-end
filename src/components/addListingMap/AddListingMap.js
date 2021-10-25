@@ -11,7 +11,7 @@ function AddListingMap({handleLatLngChange}) {
   })
 
   const [map, setMap] = React.useState(null)
-
+  console.log(map)
   const containerStyle = {
     width: '100%',
     height: '400px',

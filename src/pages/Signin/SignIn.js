@@ -2,12 +2,14 @@ import React, { useContext, useState } from 'react'
 import { Link, useHistory } from "react-router-dom";
 import Cookies from 'js-cookie'
 import CurrentUserContext from '../../context/current-user.context';
+import SetUserContext from '../../context/set-user-context';
 import axios from 'axios';
 
 
 
-const SignIn = ({ setUser }) => {
+const SignIn = () => {
     const user = useContext(CurrentUserContext)
+    const setUser = useContext(SetUserContext)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();

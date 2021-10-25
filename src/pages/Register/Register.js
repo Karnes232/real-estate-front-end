@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useHistory } from "react-router-dom";
 import Cookies from 'js-cookie'
-const axios = require('axios');
+
+import SetUserContext from '../../context/set-user-context';
+import axios from 'axios';
 
 
-const Register = ({ setUser }) => {
+const Register = () => {
+    const setUser = useContext(SetUserContext)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');

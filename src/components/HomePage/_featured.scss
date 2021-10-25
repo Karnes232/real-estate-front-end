@@ -50,7 +50,7 @@
         width: 55%;
         overflow: hidden;
         img {
-            width: 25rem;
+            width: 50rem;
             object-fit: cover;
             transition: 2s all;
             &:hover {
@@ -65,19 +65,20 @@
 
     &__title {
         h5{
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             font-weight: 400;
             color: $color-black;
+            margin-bottom: 2rem;
         }     
     }
 
     &__location {
         display: flex;
         img {
-            width: 1rem;
+            width: 1.7rem;
         }
         h6 {
-            font-size: .7rem;
+            font-size: 1.4rem;
             font-weight: 100;
             margin-left: .8rem;
         }
@@ -87,15 +88,15 @@
         &-flex {
             display: flex;
             img {
-                width: 1.2rem;
+                width: 1.7rem;
             }
             h6 {
-                font-size: .7rem;
+                font-size: 1.4rem;
                 font-weight: 100;
                 margin-left: .8rem;
             }
             .sq-foot-icon {
-                width: 2rem;
+                width: 2.4rem;
             }
             .sq-foot-info {
                 display: flex;
@@ -106,7 +107,8 @@
 
     &__price {
         border-top: 1px solid $color-grey-light-2;
-        padding-top: 2rem;
+        padding-top: 4rem;
         color: $color-black;
+        font-size: 2rem;
     }
 }
