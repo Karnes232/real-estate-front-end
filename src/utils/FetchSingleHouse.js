@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const FetchSingleHouse = async (id, setHouse, setImages) => {
+const FetchSingleHouse = async (id, setHouse, setImages, setProperty, setAmenities) => {
     const config = {
       method: 'get',
       url: `http://localhost:4000/houses/${id}`,
@@ -15,7 +15,6 @@ const FetchSingleHouse = async (id, setHouse, setImages) => {
     }
     images.push(imageUrl)
     res.data.displayImgs.map((image, index) => {
-      console.log(image.image)
       let imageUrl = {
           original: image.image,
           thumbnail: image.image,
@@ -25,6 +24,36 @@ const FetchSingleHouse = async (id, setHouse, setImages) => {
     });
     
     setImages(images)
+    if (setProperty) {
+      setProperty({
+        _id: res.data._id,
+        title: res.data.title,
+        description: res.data.description,
+        propertyType: res.data.propertyType,
+        bedrooms: res.data.bedrooms,
+        bathrooms: res.data.bathrooms,
+        address: res.data.address,
+        city: res.data.city,
+        province: res.data.province,
+        country: res.data.country,
+        sqFoot: res.data.sqFoot,
+        price: res.data.price,
+        latitude: res.data.latitude,
+        longitude: res.data.longitude
+      })
+    }
+    if (setAmenities) { 
+      setAmenities({
+        aircon: res.data.amenities.aircon,
+        balcony: res.data.amenities.balcony,
+        dishwasher: res.data.amenities.dishwasher,
+        pool: res.data.amenities.pool,
+        fridge: res.data.amenities.fridge,
+        alarm: res.data.amenities.alarm,
+        windowCover: res.data.amenities.windowCover,
+        laundry: res.data.amenities.laundry
+      })
+    }
     return res.data
 }
 

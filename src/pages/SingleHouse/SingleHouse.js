@@ -49,14 +49,14 @@ const SingleHouse = () => {
                     <div className="single-house__details">
                         <h5>Property Details</h5>
                         <div className="row">
-                            <div className="col-1-of-3"><p><strong>Property Type:</strong> {house.propertyType}</p></div>
-                            <div className="col-1-of-3"><p><strong>Bedrooms:</strong> {house.bedrooms}</p></div>
-                            <div className="col-1-of-3"><p><strong>Bathrooms:</strong> {house.bathrooms}</p></div>
+                            <div className="col-1-of-2"><p><strong>Property Type:</strong> {house.propertyType}</p></div>
+                            <div className="col-1-of-4"><p><strong>Bedrooms:</strong> {house.bedrooms}</p></div>
+                            <div className="col-1-of-4"><p><strong>Bathrooms:</strong> {house.bathrooms}</p></div>
                         </div>
                         <div className="row u-margin-bottom-small">
-                            <div className="col-1-of-3"><p><strong>Sq Foot:</strong> {new Intl.NumberFormat().format(house.sqFoot)}</p></div>
-                            <div className="col-1-of-3"><p><strong>Price:</strong> {price}</p></div>
-                            <div className="col-1-of-3"><p><strong>City:</strong> {house.city}</p></div>
+                            <div className="col-1-of-2"><p><strong>Price:</strong> {price}</p></div>
+                            <div className="col-1-of-4"><p><strong>Sq Foot:</strong> {new Intl.NumberFormat().format(house.sqFoot)}</p></div>
+                            <div className="col-1-of-4"><p><strong>City:</strong> {house.city}</p></div>
                         </div>
                         <div className="single-house__details-map">
                             <HouseLocationMap lat={house.latitude} lng={house.longitude}/>

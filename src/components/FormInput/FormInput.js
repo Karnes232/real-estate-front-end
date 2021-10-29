@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FormInput = ({displayName, inputInfo, classNameInfo, formType, handleChange}) => {
+const FormInput = ({displayName, inputInfo, classNameInfo, formType, handleChange, value}) => {
     return (
         <>
             <input 
@@ -10,6 +10,7 @@ const FormInput = ({displayName, inputInfo, classNameInfo, formType, handleChang
                 placeholder={displayName} 
                 type={formType}
                 onChange={handleChange}
+                value={value}
                 required    
             />
             <label htmlFor="title" className="form__label">{displayName}</label>   

@@ -1,0 +1,11 @@
+.edit-listing {
+    display: flex;
+    flex-wrap: wrap;
+    &__photos {
+        margin: 0 2rem;
+        img {
+            width: 15rem;
+            height: 10rem;
+        }
+    }
+}
