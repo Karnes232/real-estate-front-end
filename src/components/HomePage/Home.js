@@ -32,7 +32,7 @@ const Home = ({homeInfo}) => {
                     <h6>{homeInfo.address}</h6>
                 </div>
                 <div className="featured-home__details">
-                    <div className="row u-margin-bottom-small">
+                    <div className="row u-margin-bottom-small featured-home__details-flex-port">
                         <div className="col-1-of-2 featured-home__details-flex">
                             <img src={bedIcon} alt="" />
                             <h6>{homeInfo.bedrooms} Bedrooms</h6>

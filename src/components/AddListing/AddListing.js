@@ -217,16 +217,16 @@ const AddListing = () => {
 
                         <h4 className='u-margin-bottom-medium'>Property Features</h4>
                         <div className="form__group-flex">
-                            <CheckBoxes amenities='aircon' displayName='Air Con' handleChange={handleCheck} />
-                            <CheckBoxes amenities='balcony' displayName='Balcony' handleChange={handleCheck} />
-                            <CheckBoxes amenities='dishwasher' displayName='Dishwasher' handleChange={handleCheck} />
-                            <CheckBoxes amenities='pool' displayName='Pool' handleChange={handleCheck} />
+                            <CheckBoxes amenities='aircon' id='aircon' displayName='Air Con' handleChange={handleCheck} />
+                            <CheckBoxes amenities='balcony' id='balcony' displayName='Balcony' handleChange={handleCheck} />
+                            <CheckBoxes amenities='dishwasher' id='dishwasher' displayName='Dishwasher' handleChange={handleCheck} />
+                            <CheckBoxes amenities='pool' id='pool' displayName='Pool' handleChange={handleCheck} />
                         </div>
                         <div className="form__group-flex u-margin-bottom-medium">
-                            <CheckBoxes amenities='fridge' displayName='Fridge' handleChange={handleCheck} />
-                            <CheckBoxes amenities='alarm' displayName='Alarm' handleChange={handleCheck} />
-                            <CheckBoxes amenities='windowCover' displayName='Window Covering' handleChange={handleCheck} />
-                            <CheckBoxes amenities='laundry' displayName='Laundry Room' handleChange={handleCheck} />
+                            <CheckBoxes amenities='fridge' id='fridge' displayName='Fridge' handleChange={handleCheck} />
+                            <CheckBoxes amenities='alarm' id='alarm' displayName='Alarm' handleChange={handleCheck} />
+                            <CheckBoxes amenities='windowCover' id='windowCover' displayName='Window Covering' handleChange={handleCheck} />
+                            <CheckBoxes amenities='laundry' id='laundry' displayName='Laundry Room' handleChange={handleCheck} />
                         </div>
                         <p>Keep photos under 1 mb</p>
                         <input type="file" id="singePhoto" name="singePhoto" onChange={handleFileUpload}/>

@@ -25,7 +25,9 @@ body {
         
         @include respond(phone) {
             letter-spacing: 1rem;
-            font-size: 5rem;
+            font-size: 4rem;
+            width: 90vw;
+            margin: 0 auto;
         }
     
         /* animation-iteration-count: 3;
@@ -41,6 +43,8 @@ body {
 
         @include respond(phone) {
             letter-spacing: .5rem;
+            width: 90vw;
+            margin: 2rem auto;
         }
     
     }

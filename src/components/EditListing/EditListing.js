@@ -5,7 +5,6 @@ import Cookies from 'js-cookie';
 
 import CheckBoxes from '../CheckBoxes/CheckBoxes'
 import FormInput from '../FormInput/FormInput'
-import SubmitSinglePhoto from '../../utils/SubmitSinglePhoto';
 import SubmitMultiPhotos from '../../utils/SubmitMultiPhotos';
 import FetchSingleHouse from '../../utils/FetchSingleHouse';
 import HouseLocationMap from '../houseLocationMap/HouseLocationMap';
@@ -17,6 +16,7 @@ const EditListing = () => {
     const [house, setHouse] = useState({})
     const [images, setImages] = useState([])
     const [deletePhotos, setDeletePhotos] = useState({})
+    const [cloudinaryDelete, setCloudinaryDelete] = useState([])
     const { id } = useParams();
     useEffect(() => {
         FetchSingleHouse(id, setHouse, setImages, setProperty, setAmenities)
@@ -50,12 +50,12 @@ const EditListing = () => {
         laundry: false
     })
 
-    const [selectedFile, setSelectedFile] = useState(null)
     const [photoList, setPhotoList] = useState(null)
 
     const handleDelete = event => {
-        const { name, checked } = event.target;
+        const { name, checked, id } = event.target;
         setDeletePhotos({ ...deletePhotos, [name]: checked})
+        setCloudinaryDelete([ ...cloudinaryDelete, id ])
     }
 
     const handleCheck = event => {
@@ -68,9 +68,7 @@ const EditListing = () => {
         setProperty({ ...property, [name]: value });
       };
 
-    const handleFileUpload = e => {
-        setSelectedFile(e.target.files[0])
-    }
+    
     const handleMultiFileUpload = e => {
         setPhotoList(e.target.files)
     }
@@ -80,13 +78,11 @@ const EditListing = () => {
         const token = Cookies.get('token')
         const data = { property, amenities }
         const submittedHouse = await EditSingleListing(token, data)
-        await DeletePhotos(token, deletePhotos, submittedHouse)
-        //const photoInfo = { selectedFile, submittedHouse }
-        //const multiPhotoInfo = { photoList, submittedHouse }
-        //await SubmitSinglePhoto(token, photoInfo)
-        //await SubmitMultiPhotos(token, multiPhotoInfo)
+        await DeletePhotos(token, deletePhotos, cloudinaryDelete, submittedHouse)
+        const multiPhotoInfo = { photoList, submittedHouse }
+        await SubmitMultiPhotos(token, multiPhotoInfo)
 
-        //history.push("/");
+        history.push("/");
     }
     return (
         <section className='dashboard__section'>
@@ -245,25 +241,28 @@ const EditListing = () => {
                         <div className="form__group-flex">
                             <CheckBoxes 
                                 amenities='aircon' 
+                                id='aircon'
                                 displayName='Air Con' 
-                                handleChange={handleCheck} 
-                                
+                                handleChange={handleCheck}          
                                 checked={house.amenities.aircon}     
                             />
                             <CheckBoxes 
-                                amenities='balcony' 
+                                amenities='balcony'
+                                id='balcony' 
                                 displayName='Balcony' 
                                 handleChange={handleCheck} 
                                 checked={house.amenities.balcony}  
                             />
                             <CheckBoxes 
                                 amenities='dishwasher' 
+                                id='dishwasher'
                                 displayName='Dishwasher' 
                                 handleChange={handleCheck} 
                                 checked={house.amenities.dishwasher}  
                             />
                             <CheckBoxes 
-                                amenities='pool' 
+                                amenities='pool'
+                                id='pool' 
                                 displayName='Pool' 
                                 handleChange={handleCheck} 
                                 checked={house.amenities.pool}  
@@ -272,24 +271,28 @@ const EditListing = () => {
                         <div className="form__group-flex u-margin-bottom-medium">
                             <CheckBoxes 
                                 amenities='fridge' 
+                                id='fridge'
                                 displayName='Fridge' 
                                 handleChange={handleCheck} 
                                 checked={house.amenities.fridge}  
                             />
                             <CheckBoxes 
                                 amenities='alarm' 
+                                id='alarm' 
                                 displayName='Alarm' 
                                 handleChange={handleCheck} 
                                 checked={house.amenities.alarm}  
                             />
                             <CheckBoxes 
                                 amenities='windowCover' 
+                                id='windowCover' 
                                 displayName='Window Covering' 
                                 handleChange={handleCheck} 
                                 checked={house.amenities.windowCover}  
                             />
                             <CheckBoxes 
                                 amenities='laundry' 
+                                id='laundry' 
                                 displayName='Laundry Room' 
                                 handleChange={handleCheck} 
                                 checked={house.amenities.laundry}  
@@ -299,12 +302,13 @@ const EditListing = () => {
                         : 'not'}
                         <p>Keep photos under 1 mb</p>
                         <div className="form__group edit-listing">
-                        {images.map((img) => {
+                        {images.slice(1).map((img) => {
                                 return (
                                     <div className='edit-listing__photos'>
-                                        <img src={img.original} class="img-thumbnail" alt=""/>
+                                        <img src={img.original} className="img-thumbnail" alt=""/>
                                         <CheckBoxes 
                                             amenities={img.original}
+                                            id={img.id}
                                             displayName='Delete' 
                                             handleChange={handleDelete} 
                                         />
@@ -314,7 +318,6 @@ const EditListing = () => {
                             })}
                         </div>
                         
-                        <input type="file" id="singePhoto" name="singePhoto" onChange={handleFileUpload}/>
                         <input type="file" name="multiPhotos" id='multiPhotos' multiple onChange={handleMultiFileUpload} />
                         <button className="button add-listing-button">Edit Listing</button>
                     </form>

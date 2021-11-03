@@ -14,10 +14,12 @@ const FetchSingleHouse = async (id, setHouse, setImages, setProperty, setAmeniti
       thumbnail: `http://localhost:4000/houses/${id}/img`,
     }
     images.push(imageUrl)
-    res.data.displayImgs.map((image, index) => {
+    
+    res.data.displayImgs.map((image, index) => { 
       let imageUrl = {
-          original: image.image,
-          thumbnail: image.image,
+          original: image.image[0].url,
+          thumbnail: image.image[0].url,
+          id: image.image[0].id
       }
       images.push(imageUrl)
       return true

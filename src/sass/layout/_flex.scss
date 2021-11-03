@@ -6,8 +6,6 @@
     
     @include respond(tab-port) {
         flex-direction: column;
-        max-width: 50rem;
-        padding: 0 3rem;
     }
 
 

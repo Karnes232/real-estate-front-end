@@ -13,5 +13,8 @@
             // Change for the <button> element
             border: none;
             cursor: pointer;
+            @include respond(tab-port) {
+                font-size: 1.5rem;
+            }
         }
 }
