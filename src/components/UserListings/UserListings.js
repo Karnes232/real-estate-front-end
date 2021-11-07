@@ -1,9 +1,13 @@
 import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
 import CurrentUserListingsContext from '../../context/current-user-listings-context';
+import DeleteListing from '../../utils/DeleteListing';
+
+
 const UserListings = () => {
-    
     const houses = useContext(CurrentUserListingsContext)
+    console.log(houses)
+
     return (
         <section className='dashboard__section'>
             <div className="dashboard__my-properties">
@@ -33,10 +37,13 @@ const UserListings = () => {
                         <div className='dashboard__my-properties-single-centered'>
                             <h6>{house.createdAt.slice(0, 10).split("-").reverse().join("-")}</h6>
                         </div>
-                        <div className='dashboard__my-properties-single-centered'>
+                        <div className='dashboard__my-properties-single-centered dashboard__my-properties-edit-delete'>
                             <Link to={`/dashboard/listings/${house._id}`} className=''>
                                 <h6>Edit</h6>
                             </Link>
+                            <button id={house._id} onClick={DeleteListing}>
+                                
+                            </button>
                         </div>
                         
                         
