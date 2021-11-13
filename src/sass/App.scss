@@ -10,6 +10,7 @@
 
 @import '../components/HomePage/header';
 @import '../components/HomePage/featured';
+@import '../components/HomePage/searchBox';
 @import '../components/SideBar/sidebar';
 @import '../components/Navbar/navbar';
 @import '../components/AddListing/addlisting';
@@ -18,6 +19,7 @@
 @import '../components/houseLocationMap/HouseLocationMap';
 @import '../components/UserListings/userlistings';
 @import '../components/EditListing/editlisting';
+@import '../components/MapBox/mapBox.scss';
 
 @import './components/button';
 @import './components/form';

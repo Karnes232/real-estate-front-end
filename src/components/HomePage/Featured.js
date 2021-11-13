@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FetchNewestHomes from '../../utils/FetchNewestHomes';
 import Home from './Home';
+import SearchBox from './SearchBox';
 
 const Featured = () => {
     const [newestHomes, setNewestHomes] = useState([])
@@ -9,6 +10,7 @@ const Featured = () => {
     }, [])
     return (
         <div className='featured-homes u-margin-bottom-extra-big'>
+            <SearchBox/>
             <div className="featured-homes__title u-margin-bottom-medium">
                 <h4>Featured Properties</h4>
             </div>

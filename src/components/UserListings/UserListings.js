@@ -6,7 +6,6 @@ import DeleteListing from '../../utils/DeleteListing';
 
 const UserListings = () => {
     const houses = useContext(CurrentUserListingsContext)
-    console.log(houses)
 
     return (
         <section className='dashboard__section'>

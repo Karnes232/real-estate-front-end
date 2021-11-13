@@ -14,6 +14,8 @@ import public_route_group from './Routes/publicRoutes'
 import auth_route_group from './Routes/privateRoutes';
 
 function App() {
+  
+
   const [user, setUser] = useState({})
   const [houses, setHouses] = useState({})
   useEffect(() => {
