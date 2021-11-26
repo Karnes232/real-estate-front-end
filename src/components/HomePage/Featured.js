@@ -10,7 +10,7 @@ const Featured = () => {
     }, [])
     return (
         <div className='featured-homes u-margin-bottom-extra-big'>
-            <SearchBox/>
+            <SearchBox setHomes={setNewestHomes}/>
             <div className="featured-homes__title u-margin-bottom-medium">
                 <h4>Featured Properties</h4>
             </div>

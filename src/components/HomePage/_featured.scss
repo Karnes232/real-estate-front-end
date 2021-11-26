@@ -18,6 +18,7 @@
         align-items: center;
         &-wrap {
             flex-wrap: wrap;
+            min-width: 85vw;
             @include respond(tab-port) {
                 width: 75vw;
             }

@@ -179,13 +179,23 @@ const AddListing = () => {
                             </div>
 
                             <div className="form__group form__group-half-2">
-                                <FormInput 
-                                    displayName='City' 
-                                    inputInfo='city' 
-                                    classNameInfo='form__input form__input-half' 
-                                    formType='text'
-                                    handleChange={handleChange}
-                                />
+                                <select 
+                                    name="city" 
+                                    id="city" 
+                                    className="form__input form__input-select-2"
+                                    onChange={handleChange}
+                                >
+                                    <option value="" disabled selected>City</option>
+                                    <option value="Santo Domingo">Santo Domingo</option>
+                                    <option value="Punta Cana">Punta Cana</option>
+                                    <option value="Higuey">Higuey</option>
+                                    <option value="La Romana">La Romana</option>
+                                    <option value="Santiago">Santiago</option>
+                                    <option value="Puerta Plata">Puerta Plata</option>
+                                    <option value="Barahona">Barahona</option>
+                                    <option value="Samana">Samana</option>
+                                </select>
+                                
                             </div>
                         </div>
 

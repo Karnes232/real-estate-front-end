@@ -1,27 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SearchListings from '../../utils/SearchListings';
 
-const SearchBox = () => {
+const SearchBox = ({setHomes}) => {
+  const [property, setProperty] = useState({})
+
+  const handleChange = event => {
+    const { name, value } = event.target;    
+    setProperty({ ...property, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const listings = await SearchListings(property)
+    setHomes(listings)
+}
+
     return (
         <div className="header__search-box">
-            <form action="" className='search-form'>
+            <form action="" className='search-form' onSubmit={handleSubmit}>
               <input 
                 type="text" 
                 className='search-form__input search-form__input-keyword'
                 placeholder='Keywords'
               />
-              <select name="type" id="type" className='search-form__input search-form__input-type'>
+              <select name="type" id="type" className='search-form__input search-form__input-type' onChange={handleChange}>
                 <option value="">Property Type</option>
-                <option value="">Family House</option>
-                <option value="">Apartment</option>
-                <option value="">Condo</option>
+                <option value="Family House">Family House</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Condo">Condo</option>
               </select>
-              <select name="location" id="location" className='search-form__input search-form__input-location'>
+              <select name="location" id="location" className='search-form__input search-form__input-location' onChange={handleChange}>
                 <option value="">Location</option>
-                <option value="">Santo Domingo</option>
-                <option value="">Punta Cana</option>
-                <option value="">La Romana</option>
-                <option value="">Santiago</option>
-                <option value="">Puerta Plata</option>
+                <option value="Santo Domingo">Santo Domingo</option>
+                <option value="Punta Cana">Punta Cana</option>
+                <option value="Higuey">Higuey</option>
+                <option value="La Romana">La Romana</option>
+                <option value="Santiago">Santiago</option>
+                <option value="Puerta Plata">Puerta Plata</option>
+                <option value="Barahona">Barahona</option>
+                <option value="Samana">Samana</option>
               </select>
               <button className='search-form__button button'>Search Now</button>
             </form>
