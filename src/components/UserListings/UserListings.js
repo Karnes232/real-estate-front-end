@@ -6,6 +6,11 @@ import DeleteListing from '../../utils/DeleteListing';
 
 const UserListings = () => {
     const houses = useContext(CurrentUserListingsContext)
+    if (process.env.NODE_ENV !== 'production') {
+        let URL = process.env.REACT_APP_URL
+      } else {
+        let URL = 'https://whispering-dawn-36595.herokuapp.com/'
+      }
 
     return (
         <section className='dashboard__section'>
@@ -26,7 +31,7 @@ const UserListings = () => {
                     houses.map(house => (
                     <div key={house._id} className='dashboard__my-properties-single'>
                         <div className='dashboard__my-properties-single-info'>
-                            <img src={`${process.env.REACT_APP_URL}/houses/${house._id}/img`} alt="" />
+                            <img src={`${URL}/houses/${house._id}/img`} alt="" />
                             <div className="dashboard__my-properties-single-details">
                                 <h6>{house.title}</h6>
                                 <p>{house.address}</p>

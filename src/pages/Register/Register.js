@@ -32,8 +32,13 @@ const Register = () => {
     }
     let onSubmitRegisterIn = (e) => {
         e.preventDefault()
+        if (process.env.NODE_ENV !== 'production') {
+            let URL = process.env.REACT_APP_URL
+          } else {
+            let URL = 'https://whispering-dawn-36595.herokuapp.com/'
+          }
         
-        axios.post(`${process.env.REACT_APP_URL}/users`, {
+        axios.post(`${URL}/users`, {
             "firstName": firstName,
             "lastName": lastName,
             "email": email,
