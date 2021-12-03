@@ -33,7 +33,7 @@ const Register = () => {
     let onSubmitRegisterIn = (e) => {
         e.preventDefault()
         
-        axios.post(`${process.env.REACT_APP_URL}/users`, {
+        axios.post(`${process.env.REACT_APP_URL}users`, {
             "firstName": firstName,
             "lastName": lastName,
             "email": email,
