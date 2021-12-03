@@ -12,10 +12,12 @@ import CurrentUserListingsContext from './context/current-user-listings-context'
 
 import public_route_group from './Routes/publicRoutes'
 import auth_route_group from './Routes/privateRoutes';
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 function App() {
   
-
   const [user, setUser] = useState({})
   const [houses, setHouses] = useState({})
   useEffect(() => {

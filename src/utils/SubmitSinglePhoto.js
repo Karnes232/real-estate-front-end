@@ -7,7 +7,7 @@ const SubmitSinglePhoto = async (token, photoInfo) => {
     formData.append('submittedHouse', submittedHouse.data._id)
     const config = {
       method: 'post',
-      url: 'http://localhost:4000/houses/photo',
+      url: `${process.env.REACT_APP_URL}/houses/photo`,
       headers: { 'Authorization': `Bearer ${token}` },
       data: formData
     }

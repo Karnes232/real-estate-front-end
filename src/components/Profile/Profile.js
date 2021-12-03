@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import FormInput from '../FormInput/FormInput'
-import { useHistory } from 'react-router';
 import Cookies from 'js-cookie';
 import EditProfile from '../../utils/EditProfile';
 
 const Profile = ({user}) => {
-    const history = useHistory();
     
     useEffect(() => {
         setProfile(user)
@@ -18,14 +16,8 @@ const Profile = ({user}) => {
     })
 
     const handleChange = event => {
-        const { name, value } = event.target;   
-        if (name === 'phoneNumber') {
-            
-            setProfile({ ...profile, [name]: value });
-        } else {
-            setProfile({ ...profile, [name]: value });
-        }
-        
+        const { name, value } = event.target; 
+        setProfile({ ...profile, [name]: value });  
       };
       
     

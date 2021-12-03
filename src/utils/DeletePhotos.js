@@ -8,7 +8,7 @@ const DeletePhotos = async (token, deletePhotos, cloudinaryDelete, submittedHous
     const data = { active, cloudinaryDelete }
     const config = {
       method: 'put',
-      url: `http://localhost:4000/houses/${submittedHouse.data._id}/photos`,
+      url: `${process.env.REACT_APP_URL}/houses/${submittedHouse.data._id}/photos`,
       headers: { 'Authorization': `Bearer ${token}` },
       data
     }

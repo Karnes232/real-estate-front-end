@@ -16,7 +16,7 @@ const MapBox = () => {
         if (window.innerWidth < 500) {
             zoom = 5.8
         }
-        mapboxgl.accessToken = 'pk.eyJ1Ijoia2FybmVzMjMyIiwiYSI6ImNrcHZveno1djEzZTIyb280ZzJyeHB5bHYifQ.0CSJHHE0DL1VO90DOHM1CA';
+        mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -33,7 +33,7 @@ const MapBox = () => {
             type: 'geojson',
             // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
             // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-            data: 'http://localhost:4000/mapbox',
+            data: `${process.env.REACT_APP_URL}/mapbox`,
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)

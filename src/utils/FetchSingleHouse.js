@@ -3,15 +3,15 @@ import axios from "axios"
 const FetchSingleHouse = async (id, setHouse, setImages, setProperty, setAmenities) => {
     const config = {
       method: 'get',
-      url: `http://localhost:4000/houses/${id}`,
+      url: `${process.env.REACT_APP_URL}/houses/${id}`,
     }
 
     let res = await axios(config)
     setHouse(res.data)
     let images = []
     let imageUrl = {
-      original: `http://localhost:4000/houses/${id}/img`,
-      thumbnail: `http://localhost:4000/houses/${id}/img`,
+      original: `${process.env.REACT_APP_URL}/houses/${id}/img`,
+      thumbnail: `${process.env.REACT_APP_URL}/houses/${id}/img`,
     }
     images.push(imageUrl)
     

@@ -26,7 +26,7 @@ const UserListings = () => {
                     houses.map(house => (
                     <div key={house._id} className='dashboard__my-properties-single'>
                         <div className='dashboard__my-properties-single-info'>
-                            <img src={`http://localhost:4000/houses/${house._id}/img`} alt="" />
+                            <img src={`${process.env.REACT_APP_URL}/houses/${house._id}/img`} alt="" />
                             <div className="dashboard__my-properties-single-details">
                                 <h6>{house.title}</h6>
                                 <p>{house.address}</p>

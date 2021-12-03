@@ -9,7 +9,6 @@ function AddListingMap({handleLatLngChange}) {
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyATyzDwEKWLDx_bJ3M-ahptAfrUpTqApWs"
   })
-
   const [map, setMap] = React.useState(null)
   console.log(map)
   const containerStyle = {

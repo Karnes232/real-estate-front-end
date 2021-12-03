@@ -5,7 +5,7 @@ const DeleteListing = async (e) => {
     const token = Cookies.get('token')
     const config = {
         method: 'delete',
-        url: `http://localhost:4000/houses/${e.target.id}`,
+        url: `${process.env.REACT_APP_URL}/houses/${e.target.id}`,
         headers: { 'Authorization': `Bearer ${token}` },
       }
   

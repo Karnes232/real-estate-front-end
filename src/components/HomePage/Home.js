@@ -19,7 +19,7 @@ const Home = ({homeInfo}) => {
     return (
         <div className="featured-homes__section col-1-of-2">
             <div className="featured-home__photo">
-                <img src={`http://localhost:4000/houses/${homeInfo._id}/img`} alt="" />
+                <img src={`${process.env.REACT_APP_URL}/houses/${homeInfo._id}/img`} alt="" />
             </div>
             <div className="featured-home__info">
                 <div className="featured-home__title">

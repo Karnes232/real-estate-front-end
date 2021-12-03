@@ -3,7 +3,7 @@ import axios from "axios"
 const FetchUser = async (token, setUser, setHouses) => {
     const config = {
       method: 'get',
-      url: 'http://localhost:4000/users/me',
+      url: `${process.env.REACT_APP_URL}/users/me`,
       headers: { 'Authorization': `Bearer ${token}` }
     }
 

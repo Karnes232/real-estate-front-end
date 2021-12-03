@@ -3,7 +3,7 @@ import axios from "axios"
 const FetchAllHomes = async (setHomes) => {
     const config = {
       method: 'get',
-      url: `http://localhost:4000/houses`,
+      url: `${process.env.REACT_APP_URL}/houses`,
     }
 
     let res = await axios(config)

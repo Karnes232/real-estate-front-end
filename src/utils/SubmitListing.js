@@ -3,7 +3,7 @@ import axios from "axios"
 const SubmitListing = async (token, data) => {
     const config = {
       method: 'post',
-      url: 'http://localhost:4000/houses',
+      url: `${process.env.REACT_APP_URL}/houses`,
       headers: { 'Authorization': `Bearer ${token}` },
       data
     }

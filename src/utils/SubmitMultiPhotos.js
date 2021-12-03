@@ -11,7 +11,7 @@ const SubmitMultiPhotos = async (token, multiPhotoInfo) => {
       formData.append('submittedHouse', submittedHouse.data._id)
       const config = {
         method: 'post',
-        url: 'http://localhost:4000/photo-upload',
+        url: `${process.env.REACT_APP_URL}/photo-upload`,
         headers: { 'Authorization': `Bearer ${token}` },
         data: formData
       }

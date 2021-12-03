@@ -3,7 +3,7 @@ import axios from "axios"
 const SearchListings = async (property) => {
     const config = {
       method: 'post',
-      url: `http://localhost:4000/house-search`,
+      url: `${process.env.REACT_APP_URL}/house-search`,
       data: property
     }
 
