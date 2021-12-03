@@ -12,6 +12,12 @@
         &-flex {
             display: grid;
             grid-template-columns: 20rem 20rem 25rem 30rem;
+            @include respond(big-phone) {
+                grid-template-columns: 20vw 20vw 25vw 25vw;
+            }
+            @include respond(phone) {
+                grid-template-columns: 40vw 40vw;
+            }
         }
     }
     &__input {

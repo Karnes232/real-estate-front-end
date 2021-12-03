@@ -194,6 +194,11 @@ const AddListing = () => {
                                     <option value="Puerta Plata">Puerta Plata</option>
                                     <option value="Barahona">Barahona</option>
                                     <option value="Samana">Samana</option>
+                                    <option value="Sosua">Sosua</option>
+                                    <option value="Cabarete">Cabarete</option>
+                                    <option value="Las Terrenas">Las Terrenas</option>
+                                    <option value="Bayahibe">Bayahibe</option>
+                                    <option value="Jarabacoa">Jarabacoa</option>
                                 </select>
                                 
                             </div>
@@ -238,9 +243,9 @@ const AddListing = () => {
                             <CheckBoxes amenities='windowCover' id='windowCover' displayName='Window Covering' handleChange={handleCheck} />
                             <CheckBoxes amenities='laundry' id='laundry' displayName='Laundry Room' handleChange={handleCheck} />
                         </div>
-                        <p>Keep photos under 1 mb</p>
-                        <input type="file" id="singePhoto" name="singePhoto" onChange={handleFileUpload}/>
-                        <input type="file" name="multiPhotos" id='multiPhotos' multiple onChange={handleMultiFileUpload} />
+                        <p className='u-margin-bottom-small'>Keep photos under 1 mb</p>
+                        <input type="file" id="singePhoto" name="singePhoto" className='u-margin-bottom-small' onChange={handleFileUpload}/>
+                        <input type="file" name="multiPhotos" id='multiPhotos' className='u-margin-bottom-small' multiple onChange={handleMultiFileUpload} />
                         <button className="button add-listing-button">Add Listing</button>
                     </form>
                 </div>

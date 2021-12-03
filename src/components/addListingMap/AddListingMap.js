@@ -3,8 +3,8 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 
 function AddListingMap({handleLatLngChange}) {
-  const [lat, setLat] = useState(0)
-  const [long, setLong] = useState(0)
+  const [lat, setLat] = useState(18.958246)
+  const [long, setLong] = useState(-70.209769)
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyATyzDwEKWLDx_bJ3M-ahptAfrUpTqApWs"
@@ -17,9 +17,9 @@ function AddListingMap({handleLatLngChange}) {
     height: '400px',
   };
 
-  const center = {
-    lat: 18.958246,
-    lng: -70.209769
+  let center = {
+    lat: lat,
+    lng: long
   };
 
   const onLoad = React.useCallback(function callback(map) {

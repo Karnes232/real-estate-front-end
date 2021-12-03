@@ -11,9 +11,10 @@
     }
 
     @include respond(phone) {
-        width: 80vw;
+        width: 70vw;
         margin: 0 auto;
-        height: 20rem;
+        height: 30rem;
+        margin-bottom: 5rem;
     }
     
     .search-form {
@@ -55,21 +56,38 @@
                 
             } 
             &-type {
-                width: 20%;
+                width: 30%;
                 @include respond(phone) {
-                    width: 100%;
+                    width: 90%;
+                    margin: 0 auto;
+                    text-align: center;
                     grid-column-start: 1;
-                    grid-column-end: 2;
+                    grid-column-end: 3;
                     border-radius: 1rem;
                 }
             }
             &-location {
-                width: 20%;
+                width: 25%;
                 @include respond(phone) {
-                    width: 100%;
-                    grid-column-start: 2;
+                    width: 90%;
+                    margin: 0 auto;
+                    text-align: center;
+                    grid-column-start: 1;
                     grid-column-end: 3;
                     border-radius: 1rem;
+                }
+            }
+
+            &-bedrooms {
+                width: 15%;
+                @include respond(phone) {
+                    width: 90%;
+                    margin: 0 auto;
+                    text-align: center;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                    border-radius: 1rem;
+
                 }
             }
 
@@ -94,9 +112,11 @@
 
         &__button {
             @include respond(phone) {
-                width: 100%;
+                width: 90%;
+                margin: 0 auto;
                 grid-column-start: 1;
                 grid-column-end: 3;
+                margin-bottom: 2rem;
             }
         }
          

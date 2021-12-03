@@ -2,23 +2,38 @@
     min-height: 100vh;
     width: 99.2vw;
     display: flex;
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
     
     &__side-menu {
         width: 15vw;
         background-color: $color-grey-dark-3;
         position: fixed;
         height: 100vh;
+        @include respond(tab-port) {
+            height: 10vh;
+            width: 100vw;
+            position: fixed;
+            bottom: 0;
+            z-index: 20;
+        }
     }
 
     &__section {
         background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('../../images/dashboard-bg.webp');
-        background-size: contain;
         background-position: 10%, 50%;
         position: relative;
         background-attachment: fixed;
         width: 85vw;
-        opacity: 1;
         margin-left: 15vw;
         padding-top: 8rem;
+        padding-bottom: 8rem;
+        min-height: 100vh;
+        @include respond(tab-port) {
+            width: 100vw;
+            margin-left: 0;
+            top: 10vh;
+        }
     }
 }

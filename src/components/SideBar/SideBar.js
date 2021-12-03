@@ -11,17 +11,15 @@ const SideBar = () => {
             </div>
             <div className="sidebar__sections">
                 <ul>
+                    <Link className='sidebar__links' to={`/dashboard/profile`}>
+                        <p>My Profile</p>
+                    </Link>
                     <Link className='sidebar__links' to={`/dashboard`}>
                         <p>Add Listing</p>
                     </Link>
                     <Link className='sidebar__links' to={`/dashboard/listings`}>
                         <p>My Listings</p>
                     </Link>
-                    <li>Some Link</li>
-                    <li>Some Link</li>
-                    <li>Some Link</li>
-                    <li>Some Link</li>
-                    <li>Some Link</li>
                 </ul>
             </div>
         </nav>

@@ -8,6 +8,7 @@ const Featured = () => {
     useEffect(() => {
         FetchNewestHomes(setNewestHomes)
     }, [])
+    const handleClick = () => FetchNewestHomes(setNewestHomes)
     return (
         <div className='featured-homes u-margin-bottom-extra-big'>
             <SearchBox setHomes={setNewestHomes}/>
@@ -20,12 +21,12 @@ const Featured = () => {
 
                     {newestHomes ? newestHomes.map((home, index) => 
                         (        
-                            <Home homeInfo={home}/>
+                            <Home key={index} homeInfo={home}/>
                         )) : (
                             <div></div>
                         )}                
                 </div>
-                <button className='featured-homes__button button'>Search Now</button>
+                <button className='featured-homes__button button' onClick={handleClick}>Newest Homes</button>
             </div>
         </div>
     )

@@ -2,6 +2,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include respond(tab-port) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 5rem;
+    }
+    @include respond(phone) {
+        padding: 0 3rem;
+    }
 }
 
 .sidebar {
@@ -13,7 +21,18 @@
     }
 
     &__sections {
-
+        ul {
+            @include respond(tab-port) {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        @include respond(tab-port) {
+            width: 35vw;
+        }
+        @include respond(phone) {
+            width: 50vw;
+        }
     }
 
     &__links {

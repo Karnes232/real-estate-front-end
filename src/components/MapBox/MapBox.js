@@ -2,14 +2,26 @@ import React, { useEffect } from 'react'
 import mapboxgl from 'mapbox-gl'
 
 const MapBox = () => {
-
     useEffect(() => {
+        let zoom = 7.3
+        if (window.innerWidth < 1200) {
+            zoom = 7
+        }
+        if (window.innerWidth < 1000) {
+            zoom = 6.8
+        }
+        if (window.innerWidth < 700) {
+            zoom = 6.3
+        }
+        if (window.innerWidth < 500) {
+            zoom = 5.8
+        }
         mapboxgl.accessToken = 'pk.eyJ1Ijoia2FybmVzMjMyIiwiYSI6ImNrcHZveno1djEzZTIyb280ZzJyeHB5bHYifQ.0CSJHHE0DL1VO90DOHM1CA';
         const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
             center: [-70.20, 18.95], // starting position [lng, lat]
-            zoom: 7.3 // starting zoom
+            zoom: zoom // starting zoom
         });
         map.addControl(new mapboxgl.NavigationControl(), 'bottom-right')
 
@@ -26,18 +38,13 @@ const MapBox = () => {
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
             });
-             
+            
             map.addLayer({
             id: 'clusters',
             type: 'circle',
             source: 'homes',
             filter: ['has', 'point_count'],
             paint: {
-            // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
-            // with three steps to implement three types of circles:
-            //   * Blue, 20px circles when point count is less than 100
-            //   * Yellow, 30px circles when point count is between 100 and 750
-            //   * Pink, 40px circles when point count is greater than or equal to 750
             'circle-color': [
             'step',
             ['get', 'point_count'],
@@ -109,7 +116,7 @@ const MapBox = () => {
             // description HTML from its properties.
             map.on('click', 'unclustered-point', (e) => {
             const coordinates = e.features[0].geometry.coordinates.slice();
-             
+            console.log(e.features)
             // Ensure that if the map is zoomed out such that
             // multiple copies of the feature are visible, the
             // popup appears over the copy being pointed to.

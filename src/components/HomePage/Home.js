@@ -51,6 +51,7 @@ const Home = ({homeInfo}) => {
                     </div>
                 </div>
                 <div className="featured-home__price">
+                    <h6>{homeInfo.city}, {homeInfo.province}</h6>
                     <h4>{price}</h4>
                 </div>
             </div>

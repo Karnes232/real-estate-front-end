@@ -51,3 +51,10 @@
       }
     }
   }
+
+  .radio__label {
+    @include respond(big-phone) {
+      display: flex;
+      align-items: center;
+    }
+  }

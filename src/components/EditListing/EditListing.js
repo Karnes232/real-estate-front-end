@@ -318,7 +318,7 @@ const EditListing = () => {
                             })}
                         </div>
                         
-                        <input type="file" name="multiPhotos" id='multiPhotos' multiple onChange={handleMultiFileUpload} />
+                        <input className='u-margin-bottom-small' type="file" name="multiPhotos" id='multiPhotos' multiple onChange={handleMultiFileUpload} />
                         <button className="button add-listing-button">Edit Listing</button>
                     </form>
                 </div>

@@ -1,6 +1,15 @@
 .map-container {
   height: 43rem;
-  width: 100rem;
+  width: 70vw;
+ 
+   @include respond(tab-land) {
+     margin-bottom: 3rem;
+  }
+  @include respond(tab-port) {
+     width: 80vw;
+     margin-bottom: 10rem;
+  }
+
 }
 
 #map {
