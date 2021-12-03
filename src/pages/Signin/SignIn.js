@@ -22,13 +22,8 @@ const SignIn = () => {
 
     let onSubmitSignIn = (e) => {
         e.preventDefault()
-        if (process.env.NODE_ENV !== 'production') {
-            let URL = process.env.REACT_APP_URL
-          } else {
-            let URL = 'https://whispering-dawn-36595.herokuapp.com/'
-          }
         
-        axios.post(`${URL}/users/login`, {
+        axios.post(`${process.env.REACT_APP_URL}/users/login`, {
             "email": email,
             "password": password
 

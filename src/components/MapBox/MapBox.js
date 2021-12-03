@@ -2,11 +2,7 @@ import React, { useEffect } from 'react'
 import mapboxgl from 'mapbox-gl'
 
 const MapBox = () => {
-    if (process.env.NODE_ENV !== 'production') {
-        let URL = process.env.REACT_APP_URL
-      } else {
-        let URL = 'https://whispering-dawn-36595.herokuapp.com/'
-      }
+    
     useEffect(() => {
         let zoom = 7.3
         if (window.innerWidth < 1200) {
@@ -38,7 +34,7 @@ const MapBox = () => {
             type: 'geojson',
             // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
             // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-            data: `${URL}/mapbox`,
+            data: `${process.env.REACT_APP_URL}/mapbox`,
             cluster: true,
             clusterMaxZoom: 14, // Max zoom to cluster points on
             clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)

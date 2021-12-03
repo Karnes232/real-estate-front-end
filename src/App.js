@@ -27,6 +27,7 @@ function App() {
       setUser({})
     };
   }, [])
+  console.log(process.env.REACT_APP_URL)
 
   return (
     <div className="App">

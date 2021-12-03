@@ -16,16 +16,10 @@ const Home = ({homeInfo}) => {
       
     const price = formatter.format(homeInfo.price)
 
-    if (process.env.NODE_ENV !== 'production') {
-        let URL = process.env.REACT_APP_URL
-      } else {
-        let URL = 'https://whispering-dawn-36595.herokuapp.com/'
-      }
-
     return (
         <div className="featured-homes__section col-1-of-2">
             <div className="featured-home__photo">
-                <img src={`${URL}/houses/${homeInfo._id}/img`} alt="" />
+                <img src={`${process.env.REACT_APP_URL}/houses/${homeInfo._id}/img`} alt="" />
             </div>
             <div className="featured-home__info">
                 <div className="featured-home__title">

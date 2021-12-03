@@ -1,22 +1,17 @@
 import axios from "axios"
 
 const FetchSingleHouse = async (id, setHouse, setImages, setProperty, setAmenities) => {
-  if (process.env.NODE_ENV !== 'production') {
-    let URL = process.env.REACT_APP_URL
-  } else {
-    let URL = 'https://whispering-dawn-36595.herokuapp.com/'
-  }
     const config = {
       method: 'get',
-      url: `${URL}/houses/${id}`,
+      url: `${process.env.REACT_APP_URL}/houses/${id}`,
     }
 
     let res = await axios(config)
     setHouse(res.data)
     let images = []
     let imageUrl = {
-      original: `${URL}/houses/${id}/img`,
-      thumbnail: `${URL}/houses/${id}/img`,
+      original: `${process.env.REACT_APP_URL}/houses/${id}/img`,
+      thumbnail: `${process.env.REACT_APP_URL}/houses/${id}/img`,
     }
     images.push(imageUrl)
     
