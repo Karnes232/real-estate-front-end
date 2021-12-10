@@ -15,14 +15,10 @@ const FetchSingleHouse = async (id, setHouse, setImages, setProperty, setAmeniti
     }
     images.push(imageUrl)
     
-    res.data.displayImgs.map((image, index) => {
-      let imageReplacement = image.image[0].url
-      let slice1 = imageReplacement.slice(0,4)
-      let slice2 = imageReplacement.slice(4)
-      imageReplacement = `${slice1}s${slice2}`
+    res.data.displayImgs.map((image, index) => { 
       let imageUrl = {
-          original: imageReplacement,
-          thumbnail: imageReplacement,
+          original: image.image[0].url,
+          thumbnail: image.image[0].url,
           id: image.image[0].id
       }
       images.push(imageUrl)
