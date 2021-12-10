@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import mapboxgl from 'mapbox-gl'
-
+import 'mapbox-gl/dist/mapbox-gl.css';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+mapboxgl.workerClass = MapboxWorker;
 const MapBox = () => {
     
     useEffect(() => {
@@ -17,6 +20,7 @@ const MapBox = () => {
         if (window.innerWidth < 500) {
             zoom = 5.8
         }
+        
         mapboxgl.accessToken = 'pk.eyJ1Ijoia2FybmVzMjMyIiwiYSI6ImNrcHZveno1djEzZTIyb280ZzJyeHB5bHYifQ.0CSJHHE0DL1VO90DOHM1CA';
         const map = new mapboxgl.Map({
             container: 'map', // container ID
